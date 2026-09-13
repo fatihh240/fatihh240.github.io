@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Fatih Mehmet Menteşe — istatistik son sınıf öğrencisi. Veri analizi, makine öğrenmesi ve SQL çalışmaları.">
+<meta property="og:title" content="Fatih Mehmet Menteşe">
+<meta property="og:description" content="İstatistik son sınıf. Veri analizi, makine öğrenmesi ve SQL çalışmaları.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fatihh240.github.io/">
+<style>body{margin:0}</style>
+<title>Fatih Mehmet Menteşe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  :root{
+    --paper:#EFEFEC;
+    --paper-2:#E6E7E2;
+    --ink:#16181D;
+    --ink-soft:#3C4048;
+    --muted:#6B6E68;
+    --rule:#C9CAC3;
+    --accent:#1F44C7;
+    --brick:#B8442B;
+    --focus:#1F44C7;
+
+    --display:"Bodoni Moda",Georgia,"Times New Roman",serif;
+    --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+
+    --gut:clamp(20px,4vw,56px);
+    --col:clamp(84px,11vw,150px);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#131519;
+      --paper-2:#1A1D22;
+      --ink:#E6E7E2;
+      --ink-soft:#B9BCC2;
+      --muted:#8C9097;
+      --rule:#2E323A;
+      --accent:#7E9BFF;
+      --brick:#E08165;
+      --focus:#7E9BFF;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#131519;
+    --paper-2:#1A1D22;
+    --ink:#E6E7E2;
+    --ink-soft:#B9BCC2;
+    --muted:#8C9097;
+    --rule:#2E323A;
+    --accent:#7E9BFF;
+    --brick:#E08165;
+    --focus:#7E9BFF;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  ::selection{background:var(--accent);color:var(--paper)}
+  :focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+
+  .page{max-width:1180px;margin:0 auto;padding:0 var(--gut) 88px}
+
+  /* ---------- masthead ---------- */
+  .masthead{padding:clamp(36px,7vw,84px) 0 0}
+  .kicker{
+    font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--muted);
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+  }
+  .kicker span::after{content:" ·";color:var(--rule)}
+  .kicker span:last-child::after{content:""}
+
+  .name{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(46px,12.5vw,148px);
+    line-height:.88;
+    letter-spacing:-.015em;
+    margin:18px 0 0;
+    text-wrap:balance;
+  }
+  .name em{font-style:italic;font-weight:400}
+
+  .rule{height:1px;background:var(--rule);border:0;margin:26px 0 0;
+        transform-origin:left;}
+  .rule-anim{animation:draw .9s cubic-bezier(.2,.7,.3,1) both}
+  @keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @media (prefers-reduced-motion:reduce){.rule-anim{animation:none}}
+
+  .lede{
+    display:grid;grid-template-columns:var(--col) minmax(0,1fr);
+    gap:0 clamp(16px,3vw,40px);
+    padding:22px 0 0;
+  }
+  .lede p{
+    grid-column:2;margin:0;max-width:62ch;
+    font-size:clamp(17px,1.5vw,20px);line-height:1.5;color:var(--ink-soft);
+  }
+  .lede p + p{margin-top:12px}
+  .side{
+    grid-column:1;font-family:var(--mono);font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+    padding-top:5px;
+  }
+
+  /* ---------- generic section ---------- */
+  section{
+    display:grid;grid-template-columns:var(--col) minmax(0,1fr);
+    gap:0 clamp(16px,3vw,40px);
+    border-top:1px solid var(--rule);
+    padding:clamp(30px,4.5vw,56px) 0 0;
+    margin-top:clamp(30px,4.5vw,56px);
+  }
+  .fig{
+    grid-column:1;font-family:var(--mono);font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+    align-self:start;
+  }
+  .fig b{display:block;color:var(--brick);font-weight:500}
+  .body{grid-column:2;min-width:0}
+  h2{
+    font-family:var(--display);font-weight:400;
+    font-size:clamp(24px,3.2vw,38px);line-height:1.08;
+    margin:0 0 22px;letter-spacing:-.01em;text-wrap:balance;
+  }
+
+  /* ---------- timeline figure ---------- */
+  .plot{overflow-x:auto;padding-bottom:4px}
+  .plot svg{display:block;min-width:620px;width:100%;height:auto}
+  .cap{
+    font-family:var(--mono);font-size:11.5px;line-height:1.5;
+    color:var(--muted);margin-top:12px;max-width:60ch;
+  }
+
+  /* ---------- work entries ---------- */
+  .work{border-top:1px solid var(--rule);padding:26px 0 0;margin-top:26px}
+  .work:first-of-type{border-top:0;padding-top:0;margin-top:0}
+  .work-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .work h3{
+    font-family:var(--display);font-weight:400;font-size:clamp(22px,2.6vw,30px);
+    margin:0;letter-spacing:-.01em;
+  }
+  .idx{font-family:var(--mono);font-size:11px;color:var(--brick);letter-spacing:.1em}
+  .work p{margin:10px 0 0;max-width:64ch;color:var(--ink-soft)}
+  .work .what{color:var(--ink)}
+  .stack{
+    display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:14px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);
+  }
+  .stack span{white-space:nowrap}
+  .stack span::before{content:"— "}
+  .refs{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:12px;font-family:var(--mono);font-size:12px;letter-spacing:.04em}
+  .refs a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px}
+  .refs a:hover{border-bottom-color:var(--accent)}
+  .refs a::after{content:" ↗"}
+  .row strong a,.row em a{text-decoration:none;border-bottom:1px solid var(--rule)}
+  .row strong a:hover,.row em a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+  /* ---------- compact list ---------- */
+  .rows{display:grid;gap:0}
+  .row{
+    display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px;
+    align-items:baseline;padding:13px 0;border-top:1px solid var(--rule);
+  }
+  .row:first-child{border-top:0}
+  .row strong{font-weight:500;font-size:16px}
+  .row em{font-style:normal;color:var(--muted);display:block;font-size:14.5px;margin-top:2px}
+  .row .tool{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:right;letter-spacing:.05em}
+
+  /* ---------- experience ---------- */
+  .exp{border-top:1px solid var(--rule);padding-top:22px;margin-top:22px}
+  .exp:first-child{border-top:0;padding-top:0;margin-top:0}
+  .exp-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
+  .exp h3{font-family:var(--body);font-weight:600;font-size:17px;margin:0}
+  .when{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.05em;font-variant-numeric:tabular-nums}
+  .exp p{margin:8px 0 0;max-width:62ch;color:var(--ink-soft)}
+  .exp ul{margin:8px 0 0;padding-left:18px;max-width:62ch;color:var(--ink-soft)}
+  .exp li{margin:3px 0}
+
+  /* ---------- skills table ---------- */
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0 clamp(20px,3vw,44px)}
+  .kv{border-top:1px solid var(--rule);padding:12px 0}
+  .kv dt{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--brick);margin:0 0 5px;
+  }
+  .kv dd{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.45}
+
+  /* ---------- contact ---------- */
+  .links{display:grid;gap:0;margin-top:2px}
+  .link{
+    display:flex;justify-content:space-between;align-items:baseline;gap:18px;
+    padding:14px 0;border-top:1px solid var(--rule);
+    text-decoration:none;
+  }
+  .link:first-child{border-top:0}
+  .link .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .link .val{font-size:17px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:4px}
+  .link:hover .val{text-decoration-color:var(--accent);color:var(--accent)}
+
+  .colophon{
+    border-top:1px solid var(--rule);margin-top:clamp(34px,5vw,64px);padding-top:16px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+
+  @media (max-width:720px){
+    section,.lede{grid-template-columns:minmax(0,1fr)}
+    .fig,.side{grid-column:1;margin-bottom:14px}
+    .body,.lede p{grid-column:1}
+    .row{grid-template-columns:minmax(0,1fr)}
+    .row .tool{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="kicker">
+      <span>İstatistik, son sınıf</span>
+      <span>Dokuz Eylül Üniversitesi</span>
+      <span>İstanbul</span>
+    </div>
+    <h1 class="name">Fatih Mehmet<br><em>Menteşe</em></h1>
+    <hr class="rule rule-anim">
+    <div class="lede">
+      <div class="side">Özet</div>
+      <p>İstatistik okuyorum, işim veriyle bir soruyu cevaplanabilir hâle getirmek. Python ve SQL ile çalışıyorum; regresyon ve sınıflandırma problemlerinde LightGBM, XGBoost ve scikit-learn kullanıyorum.</p>
+      <p>Model kurmakla bitmiş saymıyorum: kurduğum modelleri Streamlit ile yayına aldım, birini CoreML'e çevirip bir iOS uygulamasının içine koydum. Aşağıdaki çalışmaların tamamı GitHub ve Kaggle'da açık.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="fig"><b>Şekil 01</b>Zaman çizelgesi</div>
+    <div class="body">
+      <h2>Nereden geçtim</h2>
+      <div class="plot">
+        <svg viewBox="0 0 900 212" role="img" aria-label="2022'den 2027'ye uzanan zaman çizelgesi: Dokuz Eylül Üniversitesi İstatistik lisansı 2022 Eylül'de başladı ve 2027 Haziran'da bitiyor; Ziraat Bankası stajı Temmuz–Ağustos 2026; Binance Angel gönüllülüğü Temmuz 2026'da başladı ve devam ediyor.">
+          <!-- education span -->
+          <text x="170" y="50" fill="currentColor" font-family="IBM Plex Mono, monospace" font-size="12.5">Dokuz Eylül Üniversitesi — İstatistik (Lisans)</text>
+          <rect x="166" y="58" width="667" height="9" fill="var(--accent)" opacity="0.22"></rect>
+          <rect x="166" y="58" width="532" height="9" fill="var(--accent)"></rect>
+
+          <!-- internship -->
+          <text x="722" y="90" text-anchor="end" fill="currentColor" font-family="IBM Plex Mono, monospace" font-size="12.5">Ziraat Bankası — Veri Analitiği, stajyer</text>
+          <rect x="698" y="98" width="24" height="9" fill="var(--brick)"></rect>
+
+          <!-- binance -->
+          <text x="726" y="130" text-anchor="end" fill="currentColor" font-family="IBM Plex Mono, monospace" font-size="12.5">Binance Angel — gönüllü topluluk programı</text>
+          <rect x="698" y="138" width="28" height="9" fill="var(--brick)"></rect>
+          <line x1="730" y1="142.5" x2="826" y2="142.5" stroke="var(--brick)" stroke-width="1.5" stroke-dasharray="3 4"></line>
+          <text x="833" y="146" fill="var(--muted)" font-family="IBM Plex Mono, monospace" font-size="11">halen</text>
+
+          <!-- graduation marker -->
+          <line x1="833" y1="44" x2="833" y2="170" stroke="var(--muted)" stroke-width="1" stroke-dasharray="2 5"></line>
+          <text x="826" y="40" text-anchor="end" fill="var(--muted)" font-family="IBM Plex Mono, monospace" font-size="11">planlanan mezuniyet</text>
+
+          <!-- axis -->
+          <line x1="60" y1="170" x2="860" y2="170" stroke="var(--rule)" stroke-width="1"></line>
+          <g fill="var(--muted)" font-family="IBM Plex Mono, monospace" font-size="11">
+            <line x1="60" y1="170" x2="60" y2="176" stroke="var(--rule)"></line><text x="60" y="192" text-anchor="middle">2022</text>
+            <line x1="202" y1="170" x2="202" y2="176" stroke="var(--rule)"></line><text x="202" y="192" text-anchor="middle">2023</text>
+            <line x1="344" y1="170" x2="344" y2="176" stroke="var(--rule)"></line><text x="344" y="192" text-anchor="middle">2024</text>
+            <line x1="485" y1="170" x2="485" y2="176" stroke="var(--rule)"></line><text x="485" y="192" text-anchor="middle">2025</text>
+            <line x1="627" y1="170" x2="627" y2="176" stroke="var(--rule)"></line><text x="627" y="192" text-anchor="middle">2026</text>
+            <line x1="769" y1="170" x2="769" y2="176" stroke="var(--rule)"></line><text x="769" y="192" text-anchor="middle">2027</text>
+          </g>
+        </svg>
+      </div>
+      <p class="cap">Şekil 01 — Koyu bant tamamlanan dönemi, açık bant kalan dönemi gösterir. Eksen takvim yılıdır, aralıklar ölçeklidir.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="fig"><b>Bölüm 02</b>Seçilmiş çalışmalar</div>
+    <div class="body">
+      <h2>Üç çalışma, üç ayrı iş</h2>
+
+      <article class="work">
+        <div class="work-head"><span class="idx">01</span><h3>Zera — mesaj filtresi</h3></div>
+        <p class="what">Bir iOS uygulamasının spam tespit altyapısını kurdum.</p>
+        <p>Metin verisini temizleyip FastText ile sınıflandırma modeli eğittim, çıkan ağırlıkları CoreML formatına çevirerek uygulamanın içine gömdüm. Model sunucuda değil, telefonun kendisinde çalışıyor — internet bağlantısı ve mesajın dışarı çıkması gerekmiyor.</p>
+        <div class="stack"><span>FastText</span><span>CoreML</span><span>NLP</span><span>iOS</span></div>
+      </article>
+
+      <article class="work">
+        <div class="work-head"><span class="idx">02</span><h3>Olist e-ticaret analizi</h3></div>
+        <p class="what">Brezilya e-ticaret verisi üzerine uçtan uca SQL analizi.</p>
+        <p>Dokuz tablolu şemayı kurdum, RFM ile müşteri segmentasyonu ve cohort retention analizi yaptım. Sorgular CTE ve window function üzerine kurulu — asıl iş modelde değil, soruyu doğru sorguya çevirmekteydi.</p>
+        <div class="stack"><span>PostgreSQL</span><span>RFM</span><span>Cohort analizi</span><span>Window functions</span></div>
+        <div class="refs"><a href="https://github.com/fatihh240/olist-ecommerce-analysis" target="_blank" rel="noopener">Kod</a></div>
+      </article>
+
+      <article class="work">
+        <div class="work-head"><span class="idx">03</span><h3>Seoul Bike talep tahmini</h3></div>
+        <p class="what">Bisiklet paylaşım talebini saatlik tahmin eden model — R² ≈ 0,90.</p>
+        <p>LightGBM ile kurdum, istatistiksel feature engineering ağırlıklı bir çalışma oldu. Streamlit ile canlıya aldım: not defterinde kalan bir model değil, girdi verip çıktı alınabilen bir arayüz.</p>
+        <div class="stack"><span>LightGBM</span><span>Feature engineering</span><span>Streamlit</span></div>
+        <div class="refs">
+          <a href="https://fatih-seoul-bike-predictor.streamlit.app/" target="_blank" rel="noopener">Canlı uygulama</a>
+          <a href="https://github.com/fatihh240/seoul-bike-predictor" target="_blank" rel="noopener">Kod</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="fig"><b>Bölüm 03</b>Diğer çalışmalar</div>
+    <div class="body">
+      <h2>Devamı</h2>
+      <div class="rows">
+        <div class="row">
+          <div><strong><a href="https://github.com/fatihh240/Loan-risk-data-Set" target="_blank" rel="noopener">Credit Risk Prediction</a></strong><em>Kredi riski sınıflandırması; SHAP ile değişken katkılarının yorumlanması. <a href="https://fatih-loan-risk-data-set.streamlit.app/" target="_blank" rel="noopener">Canlı uygulama ↗</a></em></div>
+          <div class="tool">LightGBM · scikit-learn Pipeline · SHAP</div>
+        </div>
+        <div class="row">
+          <div><strong><a href="https://github.com/fatihh240/California-Housing-XGBoost-Regression" target="_blank" rel="noopener">California Housing Regression</a></strong><em>Konut fiyat tahmini; kapsamlı EDA ve overfitting önleme çalışması.</em></div>
+          <div class="tool">XGBoost</div>
+        </div>
+        <div class="row">
+          <div><strong><a href="https://github.com/fatihh240/Telco-Customer-Churn-Classification" target="_blank" rel="noopener">Telco Customer Churn</a></strong><em>Telekomünikasyonda müşteri kaybı analizi ve tahmini; uçtan uca kurgu.</em></div>
+          <div class="tool">scikit-learn · EDA</div>
+        </div>
+        <div class="row">
+          <div><strong><a href="https://github.com/fatihh240/gym-occupancy-prediction-random-forest" target="_blank" rel="noopener">Gym Occupancy Prediction</a></strong><em>Spor salonu doluluk tahmini; R² ≈ 0,92.</em></div>
+          <div class="tool">Random Forest</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="fig"><b>Bölüm 04</b>Deneyim</div>
+    <div class="body">
+      <h2>Nerede çalıştım</h2>
+
+      <div class="exp">
+        <div class="exp-top">
+          <h3>T.C. Ziraat Bankası — Veri Analitiği Birimi, stajyer</h3>
+          <span class="when">Tem – Ağu 2026</span>
+        </div>
+        <p>Oracle veritabanı üzerinde SQL sorguları yazarak ve Excel ile raporlama yaparak veri analitiği süreçlerine destek verdim.</p>
+      </div>
+
+      <div class="exp">
+        <div class="exp-top">
+          <h3>Binance Angel — gönüllü topluluk programı</h3>
+          <span class="when">Tem 2026 – halen</span>
+        </div>
+        <ul>
+          <li>Topluluk kanallarında kullanıcı sorularını yanıtlıyor, yeni kullanıcılara platformun temel kullanımında yol gösteriyorum.</li>
+          <li>Dolandırıcılık girişimlerini ve sahte hesapları tespit edip raporluyorum.</li>
+          <li>Tekrar eden soruları takip ederek kullanıcıların en çok nerede takıldığını çıkarıyorum.</li>
+          <li>Farklı ülkelerden gönüllülerin yer aldığı bir programda çalışıyorum.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="fig"><b>Bölüm 05</b>Araçlar</div>
+    <div class="body">
+      <h2>Ne ile çalışıyorum</h2>
+      <div class="grid2">
+        <dl class="kv"><dt>Diller</dt><dd>Python, SQL, JavaScript</dd></dl>
+        <dl class="kv"><dt>Modelleme</dt><dd>scikit-learn, XGBoost, LightGBM, Random Forest, SHAP</dd></dl>
+        <dl class="kv"><dt>Veri</dt><dd>Pandas, NumPy, PostgreSQL, Oracle, veritabanı tasarımı</dd></dl>
+        <dl class="kv"><dt>Görselleştirme</dt><dd>Matplotlib, Seaborn, Excel</dd></dl>
+        <dl class="kv"><dt>Yayına alma</dt><dd>Streamlit, CoreML, Git &amp; GitHub</dd></dl>
+        <dl class="kv"><dt>Yöntem</dt><dd>Keşifsel veri analizi, feature engineering, model değerlendirme ve hiperparametre ayarı, NLP / metin sınıflandırma</dd></dl>
+        <dl class="kv"><dt>Diller (konuşma)</dt><dd>Türkçe (ana dil). İngilizce: teknik kaynakları takip edebiliyorum, konuşma tarafını aktif olarak geliştiriyorum.</dd></dl>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="fig"><b>Bölüm 06</b>İletişim</div>
+    <div class="body">
+      <h2>Nasıl ulaşırsın</h2>
+      <div class="links">
+        <a class="link" href="mailto:fatihhmmmm@gmail.com">
+          <span class="lbl">E-posta</span><span class="val">fatihhmmmm@gmail.com</span>
+        </a>
+        <a class="link" href="https://github.com/fatihh240" target="_blank" rel="noopener">
+          <span class="lbl">GitHub</span><span class="val">github.com/fatihh240</span>
+        </a>
+        <a class="link" href="https://www.kaggle.com/fatihmehmetmentese" target="_blank" rel="noopener">
+          <span class="lbl">Kaggle</span><span class="val">kaggle.com/fatihmehmetmentese</span>
+        </a>
+        <a class="link" href="https://www.linkedin.com/in/fatih-mente%C5%9Fe-128157226" target="_blank" rel="noopener">
+          <span class="lbl">LinkedIn</span><span class="val">fatih-menteşe</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="colophon">
+    <span>İstanbul / Kağıthane</span>
+    <span>Eylül 2026</span>
+  </div>
+
+</div>
+</body>
+</html>
